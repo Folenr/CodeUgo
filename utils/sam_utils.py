@@ -35,7 +35,7 @@ def get_sam_inputs(list_points_background, list_points_fish):
     )
     return input_point, input_label
 
-
+@st.cache_resource
 def load_predictor(model_type=MODEL_TYPE, sam_checkpoint=SAM_CHECKPOINT):
     sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
     sam.to(device=DEVICE)
