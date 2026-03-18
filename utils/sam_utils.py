@@ -1,6 +1,7 @@
 import numpy as np
 import torch
 from segment_anything import SamPredictor, sam_model_registry
+import streamlit as st
 
 # SAM Parameters
 SAM_CHECKPOINT = "sam_vit_b_01ec64.pth" 
