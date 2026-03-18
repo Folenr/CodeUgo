@@ -1,7 +1,6 @@
 import numpy as np
 import torch
 from segment_anything import SamPredictor, sam_model_registry
-import streamlit as st
 
 # SAM Parameters
 SAM_CHECKPOINT = "sam_vit_b_01ec64.pth" 
@@ -35,6 +34,8 @@ def get_sam_inputs(list_points_background, list_points_fish):
         + [2 + x for x in range(len(list_points_fish))] # Each fish is different
     )
     return input_point, input_label
+
+import streamlit as st
 
 @st.cache_resource
 def load_predictor(model_type=MODEL_TYPE, sam_checkpoint=SAM_CHECKPOINT):
